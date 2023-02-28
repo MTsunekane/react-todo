@@ -1,12 +1,12 @@
 import React from "react";
 
-const CompleteTodos = (props) => {
+export const CompleteTodos = (props) => {
   const { todos, onClickBack } = props;
   return (
     <div className="complete-area">
       <p className="title">完了のTODO</p>
       <ul>
-        {completeTodos.map((todo, index) => {
+        {todos.map((todo, index) => {
           return (
             <div key={todo} className="list-row">
               <li>{todo}</li>

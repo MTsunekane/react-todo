@@ -56,7 +56,15 @@ export const App = () => {
         todoText={todoText}
         onChange={onChangeTodoText}
         onClick={onClickAdd}
+        disabled={incompleteTodos.length >= 5}
       />
+      {/* 登録できるtodoの数を制限する（js)。lengthで要素の数を返す。論理演算子で、左辺がtrueの時に右辺を返す&&を使う */}
+      {incompleteTodos.length >= 5 && (
+        <p style={{ color: "red" }}>
+          登録できるTODOは5個までです。消化しましょう
+        </p>
+      )}
+
       <IncompleteTodos
         todos={incompleteTodos}
         onClickComplete={onClickComplete}
